@@ -1,0 +1,45 @@
+.skill {
+    width: 166px;
+    height: 166px;
+    position: relative;
+}
+.skill__circle {
+    fill:transparent;
+    &--layer--under {
+        stroke: $grey;
+        stroke-width: 8px;
+        opacity: 0.1;
+    }
+    &--layer--above {
+        stroke-width: 15px;
+        stroke-dasharray: 250;
+    }
+}
+.skill__title {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(70, 78, 98, 0.5);
+    padding:14px;
+}
+.skills-row__title {
+    margin-bottom: 30px;
+}
+.skills-row__list {
+    display:flex;
+}
+.skills-row__item {
+    margin-right: 35px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.skills__item {
+    margin-bottom: 29px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,51 @@
+.values {
+  margin-bottom: 152px;
+  @include phones {
+    margin-bottom: 75px;
+  }
+}
+.values__container {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    background: url("~images/content/backpack.png") left bottom / contain
+      no-repeat;
+    display: block;
+    bottom: 5%;
+    height: 79%;
+    width: 69%;
+    left: -20%;
+  }
+}
+.values__top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 44%;
+  margin: 0 auto 80px;
+  padding-left: 6%;
+}
+.values__widget {
+  display: flex;
+  justify-content: flex-end;
+  @include tablets {
+    justify-content: center;
+  }
+}
+.values__widget-container {
+  width: 66%;
+  @include tablets {
+    width: 95%;
+  }
+}
+
+.values__title {
+  margin-bottom: 50px;
+}
+.values__desc {
+  line-height: 30px;
+}
+.values__content {
+  display: flex;
+}

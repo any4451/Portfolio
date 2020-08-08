@@ -1,0 +1,30 @@
+.menu__list {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+.menu__link {
+  white-space: nowrap;
+  padding-bottom: 10px;
+  border-bottom: 2px solid transparent;
+  transition: ease all 0.3s;
+  .active,
+  &:hover {
+    color: $purple;
+    border-bottom: 2px solid $purple;
+  }
+  &--dark {
+    color: #fff;
+    .active,
+    &:hover {
+      color: $orange;
+      border-bottom: 2px solid $orange;
+    }
+  }
+}
+.menu__item {
+  margin-right: 60px;
+}
+.menu__item:last-child {
+  margin-right: 0;
+}

@@ -1,0 +1,81 @@
+.reviews {
+  background: url("~images/content/Buddha.jpg") top right 90% / cover no-repeat;
+  padding-top: 253px;
+  padding-bottom: 240px;
+}
+.slider__header {
+  margin-bottom: 93px;
+  display: flex;
+  justify-content: space-between;
+  width: 43%;
+}
+.arrow-pointer {
+  fill: $grey;
+  height: 7px;
+  vertical-align: middle;
+  transform: rotate(90deg);
+  &--right {
+    transform: rotate(-90deg);
+  }
+}
+.round-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid $grey;
+  background-color: transparent;
+  margin-right: 26px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.quote__text {
+  color: rgba(70, 78, 98, 0.6);
+  line-height: 30px;
+  margin-bottom: 30px;
+  display:flex;
+}
+.quote {
+  position: relative;
+}
+.slider__content {
+  display: flex;
+  padding-right: 34%;
+}
+.slider__item {
+  width: 50%;
+  flex-shrink: 0;
+  margin-right: 40px;
+  &:last-child {
+    margin-right: 0;
+  }
+  @include phones {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+.user-display__name {
+  color: $grey;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 13px;
+}
+.user-display__avatar {
+    width:75px;
+    height: 75px;
+    overflow: hidden;
+    border-radius:100%;
+    margin-right: 30px;
+}
+.user-display {
+    display: flex;
+    margin-left: 97px;
+    align-items: center;
+}
+.quote__text-icon {
+    margin-right: 20px;
+}
+.quote-icon {
+    fill:#DDE3EC;
+    width:75px;
+}
