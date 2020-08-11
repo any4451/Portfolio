@@ -1,12 +1,15 @@
 .values {
   margin-bottom: 152px;
+  @include tablets {
+    margin-bottom: 89px;
+  }
   @include phones {
     margin-bottom: 75px;
   }
 }
 .values__container {
   position: relative;
-  &:before {
+  &:after {
     content: "";
     position: absolute;
     background: url("~images/content/backpack.png") left bottom / contain
@@ -16,6 +19,14 @@
     height: 79%;
     width: 69%;
     left: -20%;
+    @include tablets {
+      position: relative;
+      left:50%;
+      transform: translateX(-50%);
+      background-position: center center;
+      height: 245px;
+      width: 100%;
+    }
   }
 }
 .values__top {
@@ -25,12 +36,29 @@
   width: 44%;
   margin: 0 auto 80px;
   padding-left: 6%;
+  @include desktop {
+    width: 51%;
+  }
+  @include tablets {
+    text-align:center;
+    width:65%;
+    padding-left:0;
+  }
+  @include phones {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 45px;
+  }
 }
 .values__widget {
   display: flex;
   justify-content: flex-end;
   @include tablets {
-    justify-content: center;
+    justify-content: center;   
+    margin-bottom: 100px;
+  }
+  @include phones {
+    margin-bottom: 45px;
   }
 }
 .values__widget-container {
@@ -42,6 +70,9 @@
 
 .values__title {
   margin-bottom: 50px;
+  @include tablets {
+    margin-bottom: 28px;
+  }
 }
 .values__desc {
   line-height: 30px;

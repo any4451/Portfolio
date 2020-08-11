@@ -96,6 +96,9 @@ h1 {
   font-size: 72px;
   font-weight: 800;
   line-height: 1;
+  @include tablets {
+    font-size: 48px;
+  }
   @include phones {
     font-size: 36px;
   }
@@ -103,11 +106,20 @@ h1 {
 
 h2 {
   font-size: 36px;
+  @include tablets {
+    font-size: 30px;
+  }
+  @include phones {
+    font-size: 24px;
+  }
 }
 h3 {
   font-size: 30px;
 }
 h4 {
   font-size: 24px;
+  @include tablets {
+    font-size: 18px;
+  }
 }
 

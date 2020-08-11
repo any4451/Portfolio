@@ -14,6 +14,7 @@
   color: rgba($text-color, .8);
   @include phones {
     width: 100%;
+    padding-left: 0;
   }
 }
 .about__user {
@@ -21,19 +22,29 @@
   margin-right: 5%;
   @include phones {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
+    margin-right: 0;
   }
 }
 .about__sub {
   margin-bottom: 20px;
+  @include phones {
+    margin-bottom: 5px;
+  }
 }
 .about__title {
   margin-bottom: 30px;
+  @include phones {
+    width: 68%;
+  }
 }
 .about__text {
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 92px;
+  @include phones {
+    margin-bottom: 62px;
+  }
 }
 .about__fact {
   font-style: italic;
@@ -49,5 +60,12 @@
     width: 27px;
     font-style: italic;
     color: rgba(219, 2, 0, 0.5);
+    @include phones {
+      font-size: 36px;
+      left:-25px;
+    }
+  }
+  @include tablets {
+    font-size: 14px;
   }
 }
