@@ -5,6 +5,10 @@
 .triangles {
   position: relative;
   height: 100px;
+  @include phones {
+    height: 40px;
+    margin-top: -40px;
+  }
 }
 .triangles-shape {
   position: absolute;
@@ -18,7 +22,7 @@
     left: 0;
   }
   &--right {
-    right: 0;
+    right: 1px;
   }
   &.triangles-shape--down {
     transform: rotate(180deg);
@@ -26,4 +30,7 @@
 }
 .triangles__bottom {
     margin-bottom: -100px;
+    @include phones {
+      margin-bottom: -39px;
+    }
 }

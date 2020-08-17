@@ -1,7 +1,9 @@
 .socials {
   display: flex;
   @include phones {
-    display:none;
+    &.header__socials{
+      display:none;
+    }
   }
 }
 .socials-icon {
@@ -39,6 +41,15 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -44%);
+    }
+  }
+}
+.burger__menu-socials {
+  display:none;
+  @include tablets {
+    justify-content:center;
+    &.active {
+      display:flex;
     }
   }
 }
