@@ -19,6 +19,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+  &.overflow {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
@@ -46,6 +49,7 @@ body {
 button {
   border: 0;
   cursor: pointer;
+  outline-color: transparent;
 }
 
 * {
@@ -77,7 +81,6 @@ p {
 button {
   cursor: pointer;
   background-color: transparent;
-  outline: none;
 }
 
 a {

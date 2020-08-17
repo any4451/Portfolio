@@ -9,21 +9,42 @@
   @include tablets {
     display: block;
   }
+  &--active {
+    position: fixed;
+    right: 42px;
+    top: 67px;
+  }
 }
 .burger span {
-    display: block;
-      position: absolute;
-      background: $grey;
-      width:30px;
-      height: 5px;
-}
-.burger span:before,
-span:after {
-  content: "";
-  top: 10px;
   display: block;
   position: absolute;
-  width: 100%;
-  height: 5px;
   background: $grey;
+  width: 30px;
+  height: 5px;
+  &:before,
+  &:after {
+    content: "";
+    top: 10px;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: $grey;
+  }
+  &:after {
+    top: 20px;
+    height: 5px;
+  }
+}
+
+.burger--active span {
+  background: transparent;
+}
+.burger--active span:after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.burger--active span:before {
+  top: 0;
+  transform: rotate(45deg);
 }
