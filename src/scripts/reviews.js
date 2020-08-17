@@ -25,17 +25,18 @@ new Vue({
               return item
             });
           },
-    },
-    slide(direction) {
-      const slider = this.$refs["slider"].$swiper;
-      switch(direction) {
-        case "next":
-          slider.slideNext();
-          break;
-        case "prev":
-          slider.slidePrev();
-          break;
-      }
+        slide(direction) {
+            debugger
+            const slider = this.$refs["slider"].$swiper;
+            switch(direction) {
+                case "next":
+                    slider.slideNext();
+                    break;
+                case "prev":
+                    slider.slidePrev();
+                    break;
+            }
+        },
     },
     created() {
         const data = require("../data/reviews.json");
