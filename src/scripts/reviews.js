@@ -26,7 +26,6 @@ new Vue({
             });
           },
         slide(direction) {
-            debugger
             const slider = this.$refs["slider"].$swiper;
             switch(direction) {
                 case "next":
