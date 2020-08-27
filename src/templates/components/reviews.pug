@@ -3,9 +3,9 @@ script(type="text/x-template")#slider-container
         .slider__header
             h2.slider__title Что обо мне говорят
             .slider__btns
-                button(type='button' @click="slide('next')").round-btn.round-btn--pointer--right
+                button(type='button' @click="slide('prev')").round-btn.round-btn--pointer--right
                     +icon('arrow', 'arrow-pointer') 
-                button(type='button' @click="slide('prev')").round-btn.round-btn--pointer--left
+                button(type='button' @click="slide('next')").round-btn.round-btn--pointer--left
                     +icon('arrow', 'arrow-pointer arrow-pointer--right') 
         swiper(ref="slider" :options="sliderOptions")
             swiper-slide(v-for="review in reviews" :key="review.id")

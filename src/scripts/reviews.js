@@ -13,9 +13,10 @@ new Vue({
         return {
             reviews: [],
             sliderOptions: {
-              slidesPerView:2
-            }
-        }
+              slidesPerView:2,
+              loop: false
+            },
+        };
     },
     methods: {
         requireImagesToArray(data) {
@@ -25,7 +26,7 @@ new Vue({
               return item
             });
           },
-    },
+
     slide(direction) {
       const slider = this.$refs["slider"].$swiper;
       switch(direction) {
@@ -33,14 +34,14 @@ new Vue({
           slider.slideNext();
           break;
         case "prev":
-          slider.slidePrev();
+         slider.slidePrev();
           break;
       }
     },
+  },
     created() {
         const data = require("../data/reviews.json");
         this.reviews = this.requireImagesToArray(data);
-      },
-
+      }
     
 });

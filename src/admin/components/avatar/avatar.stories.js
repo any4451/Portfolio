@@ -15,10 +15,12 @@ export const defaultView = () => ({
     }
   },
   template: `
-    <avatar :size="size" src="https://picsum.photos/300/300" />
+    <avatar :size="size" 
+    title="User name"
+    src="https://picsum.photos/300/300" />
   `,
 });
 
 defaultView.story = {
-  name: "Стандартный вид"
+  name: "Default View"
 }
