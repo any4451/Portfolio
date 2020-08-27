@@ -1,12 +1,12 @@
 <template>
   <div class="edit-line-component" :class="{'blocked' : blocked}">
-    <div class="title" v-if="editmode === false">
+    <div class="title-line" v-if="editmode === false">
       <div class="text">{{value}}</div>
       <div class="icon">
         <icon symbol="pencil" grayscale @click="editmode = true"></icon>
       </div>
     </div>
-    <div v-else class="title">
+    <div v-else class="title-line">
       <div class="input">
         <app-input
           placeholder="Название новой группы"
@@ -41,11 +41,12 @@ export default {
       type: String,
       default: ""
     },
+    editModeByDefault: Boolean,
     blocked: Boolean
   },
   data() {
     return {
-      editmode: false,
+      editmode: this.editModeByDefault,
       title: this.value
     };
   },
@@ -56,7 +57,7 @@ export default {
       } else {
         this.$emit("approve", this.value);
       }
-    }
+    },
   },
   components: {
     icon: () => import("components/icon"),

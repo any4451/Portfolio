@@ -1,13 +1,42 @@
+.reviews__container {
+  padding-right: 26%;
+  @include tablets {
+    padding-right: 7%;
+  }
+}
+.reviews__about {
+  margin-bottom: 190px;
+  @include phones {
+    margin-bottom: 150px;
+  }
+}
 .reviews {
-  background: url("~images/content/Buddha.jpg") top right 90% / cover no-repeat;
-  padding-top: 253px;
-  padding-bottom: 86px;
+  background: url("~images/content/Buddha.jpg") top right 42% /cover no-repeat;
+  padding-top: 203px;
+  padding-bottom: 135px;
+  @include phones {
+    padding-top: 140px;
+    padding-bottom: 0;
+  }
 }
 .slider__header {
   margin-bottom: 93px;
   display: flex;
-  justify-content: space-between;
-  width: 43%;
+  align-items: center;
+  @include tablets {
+    margin-bottom: 50px;
+  }
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.slider__title {
+  margin-right: 10%;
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
 .arrow-pointer {
   fill: $grey;
@@ -34,13 +63,23 @@
   line-height: 30px;
   margin-bottom: 30px;
   display:flex;
+  @include tablets {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  @include phones {
+    margin-bottom: 16px;
+  }
 }
 .quote {
   position: relative;
 }
 .slider__content {
   display: flex;
-  padding-right: 34%;
+  @include phones {
+    overflow: hidden;
+  }
+ 
 }
 .slider__item {
   width: 50%;
@@ -48,6 +87,9 @@
   margin-right: 40px;
   &:last-child {
     margin-right: 0;
+  }
+  @include tablets {
+    margin-right: 23px;
   }
   @include phones {
     margin-right: 0;
@@ -59,6 +101,12 @@
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 13px;
+  @include tablets {
+    font-size: 16px;
+  }
+  @include phones {
+    margin-bottom: 6px;
+  }
 }
 .user-display__avatar {
     width:75px;
@@ -66,16 +114,31 @@
     overflow: hidden;
     border-radius:100%;
     margin-right: 30px;
+    @include tablets  {
+      margin-right: 20px;
+    }
+    @include phones {
+      margin-right: 11px;
+    }
 }
 .user-display {
     display: flex;
     margin-left: 97px;
     align-items: center;
+    @include tablets {
+      margin-left: 0;
+    }
 }
 .quote__text-icon {
     margin-right: 20px;
+    @include phones {
+      display: none;
+    }
 }
 .quote-icon {
     fill:#DDE3EC;
     width:75px;
+    @include tablets {
+      width:37px;
+    }
 }

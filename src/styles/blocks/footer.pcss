@@ -6,20 +6,44 @@
         padding: 50px 0;
       }
 }
+.footer__block {
+    display:flex;
+    @include tablets {
+        flex-direction:column;
+    }
+}
 .footer__container {
     display:flex;
     justify-content: space-between;
+    @include phones {
+        flex-direction:column;
+    }
 }
 .copyright {
     color: $grey;
     font-size: 48px;
     white-space: nowrap;
+    margin-right: 56px;
+    @include desktop {
+        margin-bottom: 24px;
+        margin-right: 110px;
+    }
 }
 .footer__copyright {
-    margin-right: 56px;
+    display:flex;
+    @include desktop {
+        flex-direction: column;
+    }
+    @include phones {
+        margin-bottom: 45px;
+    }
 }
+
 .footer__name {
     margin-right: 128px;
+    @include desktop {
+        margin-right: 0;
+    }
 }
 .footer__name-title {
     color:#fff;
@@ -28,6 +52,9 @@
     line-height: 30px;
     margin-bottom: 16px;
     text-transform: uppercase;
+    @include phones {
+        margin-bottom: 9px;
+    }
 }
 .footer__name-text {
     color: $grey;
@@ -45,7 +72,7 @@
     font-style: italic;
 }
 .footer__menu {
-    margin-bottom: 56px;
+    margin-bottom: 36px;
     margin-right: 70px;
 }
 .footer__author {
@@ -53,4 +80,10 @@
 }
 .footer__quote {
     margin-top: 78px;
+    @include tablets {
+        margin-top: 50px;
+    }
+    @include phones {
+        margin-top: 30px;
+    }
 }
