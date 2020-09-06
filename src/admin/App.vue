@@ -1,23 +1,13 @@
 <template>
   <div class ="app-container">
-    <headline title ="Панель администрирования">
-      <user />
-    </headline>
-    <navigation />
-    <div class="page-content">
-      <div class="container">
-        <div class="header">
-          <div class="title-main"> Блок «Обо мне» </div>
-          <iconed-btn type="iconed" @click="emptyCatIsShown = true" v-if="emptyCatIsShown === false" title="Добавить группу" />
-        </div>
-        <ul class="skills">
-          <li class="item" v-if="emptyCatIsShown">
-            <category empty @remove="emptyCatIsShown = false"/>
-          </li>
-          <li class="item" v-for="category in categories" :key="category.id">
-            <category :title="category.category" :skills="category.skills"/>
-          </li>
-        </ul>
+    <router-view name="header" />
+    <router-view />
+    <div :class="['notify-container', {active: isTooltipShow}]">
+      <div class="notification">
+        <notification
+        :text="tooltipText" 
+        :type="tooltipType" 
+        @click="hideTooltip" />
       </div>
     </div>
   </div>
@@ -25,28 +15,24 @@
 </template>
 
 <script>
-import headline from "./components/headline/headline";
-import user from "./components/user/user";
-import navigation from "./components/navigation/navigation";
-import iconedBtn from "./components/button/types/iconedBtn/iconedBtn";
-import category from "./components/category/category";
+import notification from "./components/notification/notification";
+import { mapState, mapActions} from "vuex";
+
 export default {
-  components: {
-     headline,
-     user,
-     navigation,
-     iconedBtn,
-     category
-    },
-    data() {
-      return {
-        categories:[],
-        emptyCatIsShown: false
-      }
-    },
-    created() {
-      this.categories = require("../admin/data/categories.json");
-    }
+  components: { notification },
+   methods: {
+    ...mapActions({
+      hideTooltip: "tooltips/hide"
+    })
+  },
+  computed: {
+    ...mapState("tooltips", {
+      isTooltipShow: state => state.isShown,
+      tooltipText: state => state.text,
+      tooltipType: state => state.type,
+    })
+  },
+ 
 }
 </script>
 
@@ -58,6 +44,25 @@ export default {
 @import "../styles/layout/base.pcss";
 
 </style>
-<style lang="postcss" scoped src="./app.pcss">
+<style lang="postcss" scoped>
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.notify-container {
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 
+  &.active {
+    .notification {
+      transform: translateY(-100%);
+    }
+  }
+}
+.notification {
+  transition: transform .3s;
+}
 </style>

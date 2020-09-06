@@ -1,13 +1,22 @@
 <template>
 <div :class="['skillLine-component', {blocked: blocked}]">
     <div class="title">
-        <app-input noSidePaddings />
+        <app-input noSidePaddings 
+        v-model="skill.title"
+        :errorMessage="validation.firstError('skill.title')"
+        />
     </div>
     <div class="percent">
-        <app-input type="number" min="0" max="100" maxlength="3" />%
+        <app-input  
+        v-model="skill.percent" 
+        type="number" min="0" max="100" maxlength="3"
+        :errorMessage="validation.firstError('skill.percent')"
+         />%
     </div>
     <div class="buttons">
-        <iconed-btn type="iconed" title=""/>
+        <round-btn 
+        type="round"
+        @click="handleClick" />
     </div>
   </div>
 </template>
@@ -15,18 +24,45 @@
 <script>
 import input from "../input/input";
 import icon from "../icon/icon";
-import iconedBtn from "../button/types/iconedBtn/iconedBtn";
+import roundBtn from "../button/types/roundBtn/roundBtn";
+import { Validator, mixin as ValidatorMixin } from "simple-vue-validator";
 
 export default {
+    mixins: [ValidatorMixin],
+    validators: {
+        "skill.title"(value) {
+        return Validator.value(value).required("Не может быть пустым");
+        },
+        "skill.percent"(value) {
+        return Validator.value(value)
+            .integer("Должно быть числом")
+            .between(0, 100, "Некорректное значение")
+            .required("Не может быть пустым");
+        },
+    },
     props: {
         blocked: Boolean
     },
   components: {
       appInput: input, 
       icon,
-      iconedBtn
+      roundBtn
       
   },
+  data() {
+      return {
+          skill: {
+              title: "",
+              percent: ""
+          }
+      }
+  },
+  methods: {
+      async handleClick() {
+          if( await this.$validate() === false) return;
+          this.$emit('approve', this.skill);
+      }
+  }
  
 }
 </script>

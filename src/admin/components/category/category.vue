@@ -1,6 +1,12 @@
 <template>
   <card slim>
-    <edit-line slot="title" v-model="categoryTitle" :editModeByDefault="empty" @remove="$emit('remove', $event)"/>
+    <edit-line 
+    slot="title" 
+    v-model="categoryTitle" 
+    :editModeByDefault="empty" 
+    @remove="$emit('remove', $event)"
+    @approve="$emit('approve', $event)"
+    />
     <template slot="content">
         <ul class="skills" v-if="empty === false">
             <li class="item" v-for="skill in skills" :key = "skill.id">
@@ -11,7 +17,7 @@
             </li>
         </ul>
         <div class="bottom-line">
-            <skill-add-line :blocked="empty" /> 
+            <skill-add-line :blocked="empty" @approve="$emit('create-skill', $event)" /> 
         </div>
     </template>
   </card>
@@ -22,6 +28,7 @@ import card from "../Card/card";
 import editLine from "../editLine/editLine";
 import skill from "../skill/skill";
 import skillAddLine from "../skillAddLine/skillAddLine";
+
 
 export default {
   components: {
@@ -53,9 +60,6 @@ export default {
 <style lang="postcss">
 .item {
     margin-bottom: 30px;
-    &:last-child {
-        margin-bottom: 0;
-    }
 }
 .bottom-line {
     padding-top: 70px;
