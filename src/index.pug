@@ -2,42 +2,58 @@ extends ./main.layout.pug
 
 block content 
         .welcome-section
-            section.fullscreen-section.hero
+            section.fullscreen-section.hero(id='hero')
                 .container.hero__container
                     header.header
-                        a.logo(href='#') ВА
-                        nav.menu
-                            ul.menu__list
-                                li.menu__item
-                                    a(href='#').menu__link Обо мне
-                                li.menu__item
-                                    a(href='#').menu__link Навыки
-                                li.menu__item
-                                    a(href='#').menu__link Работы
-                                li.menu__item
-                                    a(href='#').menu__link Отзывы
-                        ul.socials
+                        a.logo(href='#hero') АП
+                        nav.menu.burger__menu
+                            .burger__menu-wrapper
+                                ul.menu__list.burger__menu-list
+                                    li.menu__item.burger__menu-item
+                                        a(href='#hero' ).menu__link.burger__menu-link Главная
+                                    li.menu__item.burger__menu-item
+                                        a(href='#about' ).menu__link.burger__menu-link Обо мне
+                                    li.menu__item.burger__menu-item
+                                        a(href='#skills' ).menu__link.burger__menu-link Навыки
+                                    li.menu__item.burger__menu-item
+                                        a(href='#works' ).menu__link.burger__menu-link Работы
+                                    li.menu__item.burger__menu-item
+                                        a(href='#reviews' ).menu__link.burger__menu-link Отзывы
+                                ul.socials.burger__menu-socials.active
+                                        li.socials__item
+                                            a(href='#', target="_blank").socials__link 
+                                                +icon('insta','socials-icon socials-icon--light')
+                                        li.socials__item
+                                            a(href='https://github.com/any4451', target="_blank").socials__link 
+                                                +icon('github','socials-icon socials-icon--light')
+                                        li.socials__item
+                                            a(href='#', target="_blank").socials__link 
+                                                +icon('vk','socials-icon socials-icon--light')
+                                        li.socials__item
+                                            a(href='#').socials__link 
+                                                +icon('envelope','socials-icon socials-icon--light')
+                        ul.socials.header__socials
                             li.socials__item
                                 a(href='#', target="_blank").socials__link 
                                     +icon('insta','socials-icon socials-icon--light')
                             li.socials__item
-                                a(href='#', target="_blank").socials__link 
+                                a(href='https://github.com/any4451', target="_blank").socials__link 
                                     +icon('github','socials-icon socials-icon--light')
                             li.socials__item
                                 a(href='#', target="_blank").socials__link 
                                     +icon('vk','socials-icon socials-icon--light')
                             li.socials__item
-                                a(href='#').socials__link 
+                                a(href='#' target="_blank").socials__link 
                                     +icon('envelope','socials-icon socials-icon--light')
                         a(href='#').burger
                             span
                     .userinfo
                         .userinfo__subtitle Личный сайт #[br] веб разработчика
-                        h1.userinfo__title Владимир #[br] Астаханов
+                        h1.userinfo__title Анна #[br] Подоплелова
                     .hero__buttons
                         button.scroll-down Скролл 
                             +icon('scroll-down', 'scroll-icon')
-            section.about
+            section.about(id='about')
                 .container.about__container
                     .about__user
                         .user
@@ -47,224 +63,76 @@ block content
                             table.user__data
                                 tr.user__data-row
                                     td.user__data-title Проживаю:
-                                    td.user__data-content Новосибирск
+                                    td.user__data-content Санкт-Петербург
                                 tr.user__data-row
                                     td.user__data-title Возраст:
-                                    td.user__data-content 27 лет
+                                    td.user__data-content 25 лет
                                 tr.user__data-row
                                     td.user__data-title Родился:
-                                    td.user__data-content 1 января 1991
+                                    td.user__data-content 8 октября 1994
                     .about__content
                         .about__sub Привет, меня зовут
-                        h2.about__title Владимир Астаханов
+                        h2.about__title Анна Подоплелова
                         .about__text
                             p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                        .about__fact Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                        .about__fact Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         .triangles.triangles__top
                 svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles-shape.triangles-shape--left
                     polygon(points='0,0 0,100 1000,100')
                 svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles-shape.triangles-shape--right
                     polygon(points='0,100 1000,100 1000,0')
         .middle-section
-            section.values
+            section.values(id='skills')
                 .container.values__container
                     .values__top
-                        h3.values__title Чем я могу быть полезен вам
+                        h3.values__title Чем я могу быть полезна вам
                         .values__desc
-                             p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                             p Этот сайт я сделала в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                     .values__widget 
                         .values__widget-container
-                            ul.skills
-                                li.skills__item
-                                    .skills-row
-                                        h4.skills-row__title Front-end
-                                        ul.skills-row__list
-                                            li.skills-row__item
-                                                .skill 
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='184').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title HTML5
-                                            li.skills-row__item
-                                                .skill 
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='206').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title CSS3
-                                            li.skills-row__item
-                                                .skill 
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='65').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title Javascript
-                                            li.skills-row__item
-                                                .skill
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='184').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title Jquery#[br]&Vue.js
-                                li.skills__item
-                                    .skills-row
-                                        h4.skills-row__title Workflow
-                                        ul.skills-row__list
-                                            li.skills-row__item
-                                                .skill 
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='45').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title GIT
-                                            li.skills-row__item
-                                                .skill 
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='180').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title Terminal
-                                            li.skills-row__item
-                                                .skill 
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='124').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title Gulp
-                                            li.skills-row__item
-                                                .skill 
-                                                    svg(viewBox='0 0 100 100').skill__circle-shape
-                                                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer--under
-                                                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(180 50 50)' stroke-dashoffset='150').skill__circle.skill__circle--layer--above
-                                                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='100%')
-                                                            stop(offset='0%' stop-color='#4A00ED')
-                                                            stop(offset='100%' stop-color='#7C00EA')
-                                                    .skill__title Webpack
-            section.works
+                            #skills-component
+            section.works(id='works')
                 .container.works__container
                     h2.works__title Мои работы
                     .works__content
-                        .works-preview
-                                .works-preview__pics(data-slide='1')
-                                    .works-preview__pics-content
-                                        +image('content/screenshot.jpg', 'works-preview__img')
-                                        .works-preview__thumbs
-                                            ul.thumbs 
-                                                li.thumbs__item
-                                                    a(href='#').thumbs__link.active
-                                                    +image('content/screenshot.jpg', 'works-preview__img') 
-                                                li.thumbs__item
-                                                    a(href='#').thumbs__link
-                                                    +image('content/screenshot2.jpg', 'works-preview__img') 
-                                                li.thumbs__item
-                                                    a(href='#').thumbs__link
-                                                    +image('content/screenshot3.jpg', 'works-preview__img')
-                                                li.thumbs__item
-                                                    a(href='#').thumbs__link
-                                                    +image('content/screenshot4.jpg', 'works-preview__img')
-                                        .works-preview__btns
-                                            .square-btns
-                                                button(type='button').square-btns__item.square-btns__item--next
-                                                    +icon('arrow', 'arrow') 
-                                                button(type='button').square-btns__item.square-btns__item--prev
-                                                    +icon('arrow', 'arrow arrow-up') 
-                                .works-preview__info
-                                    ul.tags
-                                        li.tags__item HTML
-                                        li.tags__item CSS
-                                        li.tags__item Javascript
-                                    h3.works-preview__title Сайт школы образования
-                                    .works-preview__desc
-                                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                                    a(href='#').iconed-link
-                                        +icon('link', 'link-icon') 
-                                        p Посмотреть сайт
+                        #preview-component
                 
         .triangles.triangles__bottom
                 svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles-shape.triangles-shape--left.triangles-shape--down
                     polygon(points='0,0 0,100 1000,100')
                 svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles-shape.triangles-shape--right.triangles-shape--down
                     polygon(points='0,100 1000,100 1000,0')
-        section.reviews
-                .container
-                    .slider
-                        .slider__header
-                            h2.slider__title Что обо мне говорят
-                            .slider__btns
-                                button(type='button').round-btn.round-btn--pointer--right
-                                    +icon('arrow', 'arrow-pointer') 
-                                button(type='button').round-btn.round-btn--pointer--left
-                                    +icon('arrow', 'arrow-pointer arrow-pointer--right') 
-                        ul.slider__content
-                            li.slider__item
-                                .quote
-                                    .quote__text
-                                        .quote__text-icon
-                                            +icon('quote', 'quote-icon') 
-                                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                                    .quote__user
-                                        .user-display
-                                            .user-display__avatar
-                                                .user-display__avatar-style
-                                                    +image('content/Dmitriy.jpg', 'user-display__img')
-                                            .user-display__data
-                                                .user-display__name Ковальчук Дмитрий
-                                                .user-display__occ Основатель Loftschool
-                            li.slider__item
-                                .quote
-                                    .quote__text
-                                        .quote__text-icon
-                                            +icon('quote', 'quote-icon') 
-                                        p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                                    .quote__user
-                                        .user-display
-                                            .user-display__avatar
-                                                .user-display__avatar-style
-                                                    +image('content/Vladimir.jpg', 'user-display__img')
-                                            .user-display__data
-                                                .user-display__name Владимир Сабанцев
-                                                .user-display__occ Преподаватель
+        section.reviews(id='reviews')
+                .container.reviews__container
+                    .reviews__about
+                        #slider-component
         footer.footer
             .container.footer__container
                 .footer__copyright
                         .copyright &#169; 2020
-                .footer__name
-                        .footer__name-title Владимир #[br] Астахов
-                        .footer__name-text Личный сайт #[br] веб-разработчика
+                        .footer__name
+                            .footer__name-title Анна Подоплелова
+                            .footer__name-text Личный сайт веб-разработчика
                 .footer__block
-                        nav.menu.footer__menu
-                            ul.menu__list
+                    .footer__menu-wrapper
+                        .menu.footer__menu
+                            ul.menu__list.footer__menu-list
                                 li.menu__item
-                                    a(href='#').menu__link.menu__link--dark Обо мне
+                                    a(href='#about').menu__link.menu__link--dark Обо мне
                                 li.menu__item
-                                    a(href='#').menu__link.menu__link--dark Навыки
+                                    a(href='#skills').menu__link.menu__link--dark Навыки
                                 li.menu__item
-                                    a(href='#').menu__link.menu__link--dark Работы
+                                    a(href='#works').menu__link.menu__link--dark Работы
                                 li.menu__item
-                                    a(href='#').menu__link.menu__link--dark Отзывы
+                                    a(href='#reviews').menu__link.menu__link--dark Отзывы
                         .footer__info
-                            p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                            p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
                         ul.socials
                                 li.socials__item.socials__item--circle
                                     a(href='#', target="_blank").socials__link 
                                         +icon('insta','socials-icon socials-icon--dark')
                                 li.socials__item.socials__item--circle
-                                    a(href='#', target="_blank").socials__link 
+                                    a(href='https://github.com/any4451', target="_blank").socials__link 
                                         +icon('github','socials-icon socials-icon--dark')
                                 li.socials__item.socials__item--circle
                                     a(href='#', target="_blank").socials__link 
@@ -272,10 +140,10 @@ block content
                                 li.socials__item.socials__item--circle
                                     a(href='#').socials__link 
                                         +icon('envelope','socials-icon socials-icon--dark')
-                .footer__quote
-                        .footer__info
-                            p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-                            .footer__author Martin Golding
+                    .footer__quote
+                            .footer__info
+                                p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                                .footer__author Martin Golding
 
                     
                                             

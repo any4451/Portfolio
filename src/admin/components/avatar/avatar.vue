@@ -26,4 +26,16 @@ export default {
   }
 }
 </script>
-<style lang="postcss" scoped src="./avatar.pcss"></style>
+
+<style lang="postcss" scoped>
+.avatar-component {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+</style>
